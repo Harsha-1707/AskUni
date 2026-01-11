@@ -1,0 +1,36 @@
+app:
+  name: "CollegeInfoBot"
+  version: "1.0.0"
+
+paths:
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  vector_store: "vector_store"
+  embeddings_cache: "embeddings"
+
+rag:
+  chunk_size: 500
+  chunk_overlap: 80
+  top_k: 5
+  similarity_threshold: 0.6
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2" # Lightweight, optimized for M-series
+
+llm:
+  provider: "mistral" # Options: "local", "mistral"
+  
+  mistral:
+    model: "mistral-large-latest"
+    api_key_env_var: "MISTRAL_API_KEY"
+    temperature: 0.1
+
+  # Using a local GGUF model via ctransformers or llama-cpp-python
+  model_path: "models/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf" 
+  repo_id: "TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF"
+  filename: "tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf"
+  context_window: 2048
+  max_new_tokens: 512
+  temperature: 0.1 # Low temp for factual accuracy
+
+ui:
+  title: "College Information Assistant"
+  theme: "soft"

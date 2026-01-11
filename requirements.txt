@@ -1,0 +1,20 @@
+gradio>=4.0.0
+fastapi
+uvicorn
+sentence-transformers
+faiss-cpu  # Start with cpu, mps support is built-in to some builds or handled via torch
+torch
+numpy
+pandas
+python-dotenv
+pyyaml
+pypdf
+python-docx
+# For local LLM inference on Mac M-series
+llama-cpp-python
+huggingface_hub
+mnlp  # optional for some preprocessing
+beautifulsoup4
+beautifulsoup4
+requests
+mistralai
