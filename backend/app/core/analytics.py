@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
 from datetime import date, datetime
-from app.models.all_models import SourceUsageStats, QueryAnalytics, ChatLog
+from app.models.all_models import ChatLog
+from app.models.analytics_models import SourceUsageStats, QueryAnalytics
 import logging
 
 logger = logging.getLogger(__name__)
