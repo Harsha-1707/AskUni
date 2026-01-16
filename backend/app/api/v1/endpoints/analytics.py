@@ -12,7 +12,7 @@ router = APIRouter()
 @router.get("/analytics/overview")
 def get_overview(
     db: Session = Depends(get_db),
-    current_user = Depends(get_current_admin_user)
+    current_user = Depends(get_current_active_admin)
 ):
     """Get analytics overview for dashboard"""
     return get_analytics_overview(db)
@@ -20,7 +20,7 @@ def get_overview(
 @router.get("/analytics/sources")
 def get_source_stats(
     db: Session = Depends(get_db),
-    current_user = Depends(get_current_admin_user)
+    current_user = Depends(get_current_active_admin)
 ):
     """Get source usage statistics"""
     sources = db.query(SourceUsageStats).order_by(desc(SourceUsageStats.usage_count)).limit(10).all()
@@ -40,7 +40,7 @@ def get_source_stats(
 def get_query_trends(
     days: int = 7,
     db: Session = Depends(get_db),
-    current_user = Depends(get_current_admin_user)
+    current_user = Depends(get_current_active_admin)
 ):
     """Get query trends over time"""
     start_date = date.today() - timedelta(days=days)
@@ -67,7 +67,7 @@ def get_query_trends(
 def get_error_stats(
     limit: int = 20,
     db: Session = Depends(get_db),
-    current_user = Depends(get_current_admin_user)
+    current_user = Depends(get_current_active_admin)
 ):
     """Get recent errors"""
     errors = db.query(ChatLog).filter(
@@ -90,7 +90,7 @@ def get_error_stats(
 @router.get("/analytics/feedback-summary")
 def get_feedback_summary(
     db: Session = Depends(get_db),
-    current_user = Depends(get_current_admin_user)
+    current_user = Depends(get_current_active_admin)
 ):
     """Get feedback statistics"""
     total_feedback = db.query(Feedback).count()
