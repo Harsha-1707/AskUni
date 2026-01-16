@@ -1,0 +1,12 @@
+[
+  {
+    "question": "What is the fee structure for B.Tech?",
+    "ground_truth_answer": "The fee for B.Tech is $2000 per year.",
+    "relevant_docs": ["fees_2024.pdf", "btech_structure.txt"]
+  },
+  {
+    "question": "Is there a hostel on campus?",
+    "ground_truth_answer": "Yes, there are separate hostels for boys and girls.",
+    "relevant_docs": ["hostel_policy.pdf"]
+  }
+]

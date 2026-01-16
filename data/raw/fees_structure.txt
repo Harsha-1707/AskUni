@@ -1,0 +1,19 @@
+AskUni University - Tuition Fees 2024
+
+UNDERGRADUATE PROGRAMS
+- B.Tech (All Branches): $2000 per year
+- B.Sc (Computer Science): $1500 per year
+- B.A. (Liberal Arts): $1200 per year
+
+POSTGRADUATE PROGRAMS
+- M.Tech (AI & ML): $3000 per year
+- MBA: $5000 per year
+
+HOSTEL FEES
+- Single Occupancy: $1000 per semester
+- Double Occupancy: $600 per semester
+- Mess Charges: $400 per semester (Optional)
+
+ADMISSION RULES
+- Entrance Exam: All B.Tech admissions are based on the AskUni Entrance Test (AET).
+- Cutoff: Minimum 75% in high school physics and math is required.
