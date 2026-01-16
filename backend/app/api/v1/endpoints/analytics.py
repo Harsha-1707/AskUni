@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from sqlalchemy import func, desc
-from app.api.deps import get_db, get_current_admin_user
+from app.api.deps import get_db, get_current_active_admin
 from app.models.all_models import ChatLog, Feedback
 from app.models.analytics_models import SourceUsageStats, QueryAnalytics
 from app.core.analytics import get_analytics_overview
