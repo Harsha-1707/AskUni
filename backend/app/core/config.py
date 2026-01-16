@@ -6,10 +6,8 @@ class Settings(BaseSettings):
     PROJECT_NAME: str = "AskUni Backend"
     API_V1_STR: str = "/api/v1"
     
-    # DATABASE
-    # Defaulting to sqlite for safety if postgres isn't set, but requirements said Postgres.
-    # Provided example assumes postgres.
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql://postgres:password@localhost:5432/askuni")
+    # DATABASE - Railway will inject DATABASE_URL automatically
+    DATABASE_URL: str
 
     # SECURITY
     SECRET_KEY: str = os.getenv("SECRET_KEY", "CHANGE_THIS_TO_A_SUPER_SECRET_KEY_IN_PRODUCTION")

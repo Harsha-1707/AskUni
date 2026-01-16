@@ -11,8 +11,9 @@ from app.db.session import engine
 # Setup Logging
 logger = setup_logging()
 
-# Create Tables (Simple approach for dev, use Alembic for prod)
-Base.metadata.create_all(bind=engine)
+# Create Tables manually via Railway CLI after deployment:
+# railway run python -c "from app.db.session import engine; from app.db.base_class import Base; Base.metadata.create_all(bind=engine)"
+# Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title=settings.PROJECT_NAME, 
