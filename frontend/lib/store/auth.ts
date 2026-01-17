@@ -34,18 +34,50 @@ export const useAuthStore = create<AuthState>()(
           formData.append('username', email);
           formData.append('password', password);
 
-          const response = await api.post('/auth/login', formData, {
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          });
+          try {
+            // Try real backend first
+            const response = await api.post('/auth/login', formData, {
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            });
 
-          const { access_token } = response.data;
-          localStorage.setItem('token', access_token);
-          
-          // Decode JWT to get user role (simple base64 decode)
-          const payload = JSON.parse(atob(access_token.split('.')[1]));
-          const role = email.includes('admin') ? 'admin' : 'student'; // Fallback logic
-          
-          set({ token: access_token, user: { id: payload.sub || '', email, role }, isLoading: false });
+            const { access_token } = response.data;
+            localStorage.setItem('token', access_token);
+            
+            // Decode JWT to get user role (simple base64 decode)
+            const payload = JSON.parse(atob(access_token.split('.')[1]));
+            const role = email.includes('admin') ? 'admin' : 'student'; // Fallback logic
+            
+            set({ token: access_token, user: { id: payload.sub || '', email, role }, isLoading: false });
+          } catch (backendError: any) {
+            // Backend unavailable - try demo mode
+            console.warn('Backend unavailable, attempting demo mode authentication');
+            
+            // Demo users
+            const demoUsers = {
+              'admin@askuni.com': { password: 'admin123', role: 'admin', id: 'demo-admin-001' },
+              'student@askuni.com': { password: 'student123', role: 'student', id: 'demo-student-001' },
+            };
+            
+            const demoUser = demoUsers[email as keyof typeof demoUsers];
+            
+            if (demoUser && demoUser.password === password) {
+              const demoToken = 'demo-token-' + btoa(email + Date.now());
+              localStorage.setItem('token', demoToken);
+              localStorage.setItem('demo-mode', 'true');
+              
+              set({ 
+                token: demoToken, 
+                user: { id: demoUser.id, email, role: demoUser.role }, 
+                isLoading: false 
+              });
+              
+              console.log('✅ Demo mode login successful');
+              return;
+            }
+            
+            // Both backend and demo auth failed
+            throw backendError;
+          }
         } catch (error: any) {
           set({ error: error.response?.data?.detail || 'Login failed', isLoading: false });
           throw error;
@@ -66,6 +98,7 @@ export const useAuthStore = create<AuthState>()(
 
       logout: () => {
         localStorage.removeItem('token');
+        localStorage.removeItem('demo-mode');
         set({ user: null, token: null });
       },
 
