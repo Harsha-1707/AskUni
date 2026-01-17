@@ -50,7 +50,7 @@ export default function FailedQueriesPage() {
           <div className="flex items-center gap-2 mb-4">
             <AlertCircle className="w-5 h-5 text-red-500" />
             <p className="text-sm text-gray-600">
-              These queries received low confidence scores (< 0.5), indicating the system couldn't find relevant information.
+              These queries received low confidence scores (&lt; 0.5), indicating the system couldn&apos;t find relevant information.
             </p>
           </div>
         </Card>
