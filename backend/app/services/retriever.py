@@ -20,7 +20,7 @@ class Retriever:
         self.vector_store_path = settings.VECTOR_STORE_PATH
         self.model_name = settings.EMBEDDING_MODEL
         self.top_k = 5
-        self.threshold = 0.6
+        self.threshold = 0.3
         
         logger.info(f"Loading Embedding Model: {self.model_name}")
         self.model = SentenceTransformer(self.model_name)
