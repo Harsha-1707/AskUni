@@ -34,7 +34,7 @@ class ChatOrchestrator:
             answer = "I couldn't find any specific information about that in my documents."
             confidence = 0.0
         else:
-            system_prompt = """You are AskUni, a knowledgeable and friendly assistant for Apex Engineering College. Answer the student's question clearly and concisely using the provided reference documents.
+            system_prompt = """You are AskUni, a knowledgeable and friendly assistant for Anurag University. Answer the student's question clearly and concisely using the provided reference documents.
 
 Guidelines:
 - Write in plain, natural English. Do NOT use markdown symbols like **, *, or #.

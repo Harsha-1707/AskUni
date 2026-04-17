@@ -201,7 +201,7 @@ export default function ChatPage() {
             <div className="chat-empty-icon">🎓</div>
             <h2 className="chat-empty-title">What do you want to know?</h2>
             <p className="chat-empty-sub">
-              Ask anything about Apex Engineering College — fees, admissions,
+              Ask anything about Anurag University — fees, admissions,
               programs, campus life — and get an AI-powered cited answer.
             </p>
             <div className="chat-suggestions">

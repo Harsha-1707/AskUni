@@ -42,7 +42,7 @@ export default function HomePage() {
 
             <p className="hero-subtitle">
               Get instant, accurate answers about admissions, courses, fees, and
-              campus policies at Apex Engineering College — powered by advanced
+              campus policies at Anurag University — powered by advanced
               AI with full source attribution.
             </p>
 
@@ -127,7 +127,7 @@ export default function HomePage() {
               <div className="feature-icon-wrap icon-blue">🎓</div>
               <h3 className="feature-title">Verified Accuracy</h3>
               <p className="feature-desc">
-                Every answer is grounded in official Apex Engineering College
+                Every answer is grounded in official Anurag University
                 documents — not hallucinated data. Confidence scores tell you
                 exactly how sure the AI is.
               </p>
@@ -219,7 +219,7 @@ export default function HomePage() {
               Ready to stop guessing?
             </h2>
             <p className="cta-sub">
-              Join students who use AskUni to navigate Apex Engineering College
+              Join students who use AskUni to navigate Anurag University
               without confusion. Free to use, powered by AI.
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -241,7 +241,7 @@ export default function HomePage() {
           <sup className="logo-badge" style={{ fontSize: '0.45rem' }}>AI</sup>
         </div>
         <p className="footer-copy">
-          © 2025 Apex Engineering College · AI-powered by Mistral RAG
+          © 2025 Anurag University · AI-powered by Mistral RAG
         </p>
         <div className="footer-links">
           <a href="#" className="footer-link">Privacy</a>

@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "AskUni — AI-Powered University Assistant",
   description:
-    "Get instant, cited answers about admissions, courses, fees, and campus policies at Apex Engineering College using advanced Retrieval-Augmented Generation AI.",
-  keywords: ["university", "AI", "admissions", "Apex Engineering College", "RAG", "chatbot"],
+    "Get instant, cited answers about admissions, courses, fees, and campus policies at Anurag University using advanced Retrieval-Augmented Generation AI.",
+  keywords: ["university", "AI", "admissions", "Anurag University", "RAG", "chatbot"],
   openGraph: {
     title: "AskUni — AI-Powered University Assistant",
-    description: "Get instant AI answers about Apex Engineering College.",
+    description: "Get instant AI answers about Anurag University.",
     type: "website",
   },
 };

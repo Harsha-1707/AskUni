@@ -68,7 +68,7 @@ export default function RegisterPage() {
                   className="form-input has-icon"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="student@apex.edu.in"
+                  placeholder="student@anurag.edu.in"
                   required
                   autoComplete="email"
                 />
