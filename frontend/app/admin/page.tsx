@@ -504,7 +504,7 @@ export default function AdminDashboard() {
                       <XAxis type="number" tick={{ fill: 'var(--text-muted)', fontSize: 11 }} axisLine={false} tickLine={false} />
                       <YAxis type="category" dataKey="name" tick={{ fill: 'var(--text-muted)', fontSize: 11 }} axisLine={false} tickLine={false} width={60} />
                       <Tooltip contentStyle={{ background: 'var(--bg-elevated)', border: '1px solid var(--glass-border)', borderRadius: 10, color: 'var(--text-primary)' }} />
-                      <Bar dataKey="value" fill="#f59e0b" radius={[0, 4, 4, 0]} label={{ position: 'right', fill: 'var(--text-muted)', fontSize: 11, formatter: (v: number) => `${v}%` }} />
+                      <Bar dataKey="value" fill="#f59e0b" radius={[0, 4, 4, 0]} label={{ position: 'right', fill: 'var(--text-muted)', fontSize: 11, formatter: (v) => `${v}%` }} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
